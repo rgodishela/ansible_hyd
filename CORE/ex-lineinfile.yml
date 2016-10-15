@@ -1,0 +1,14 @@
+# For commenting some lines in code
+- hosts: all
+  vars:
+    file_path: /home/osboxes/playbooks/server_role.yml
+  tasks:
+    - name: Change few lines
+      lineinfile:
+        dest: "{{ file_path }}"
+        regexp: "{{ item.linesrc }}"
+        line: "{{ item.linedest }}"
+        state: present
+      with_items:
+        - { linesrc: '5-8,15-18', linedest: '#   - processor-ids: 5-8,15-18' }
+        - { linesrc: 'role: vm', linedest: '#    role: vm' }

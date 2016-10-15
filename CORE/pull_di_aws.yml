@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  gather_facts: true
+  become: yes
+  connection: local
+
+  vars:
+   ec2pyurl: https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py
+   ec2iniurl: https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.ini
+
+  tasks:
+  - name: Get the File from http
+    get_url: url={{ item }} dest=/tmp mode=0777
+    with_items:
+     - "{{ ec2pyurl }}"
+     - "{{ ec2iniurl }}"
+
+  - name: Install boto in Redhat Family
+    yum: name=python-boto state=present
+    when: ansible_os_family == 'RedHat'
+
+  - name: Install boto in Debian Family
+    apt: name=python-boto state=present
+    when: ansible_os_family == 'Debian'

@@ -1,0 +1,12 @@
+---
+- hosts: "{{ rhel }}"
+  gather_facts: no
+  become: yes
+  tasks:
+  - name: Find uptime
+    command: uptime
+    register: UpTimeOutput
+#  - debug: var=UpTimeOutput.stdout_lines
+
+  - debug: var=UpTimeOutput
+

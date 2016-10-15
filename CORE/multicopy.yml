@@ -1,0 +1,13 @@
+
+---
+- hosts: prod
+  user: root
+  sudo: yes
+  connection: ssh
+  tasks:
+  - name: Copy Several Files
+    copy: src={{ item.src }} dest={{ item.dest }} owner=root group=root mode=755
+    with_items: 
+      - { src: '<first file source path>', dest: '<first file destination path>' }
+      - { src: '<second file source path>', dest: '<second file destination path>' }
+      - { src: '<third file source path>', dest: '<third file destination path>' }

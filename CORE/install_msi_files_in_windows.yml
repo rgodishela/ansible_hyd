@@ -1,0 +1,22 @@
+---
+- hosts: windows
+  gather_facts: true
+
+  tasks:
+  
+  - name: Create a temp directory
+    win_file: path=C:\temp state=directory
+    
+  - name: Copy the files
+    win_copy: src=files/{{ item }} dest=C:\temp
+    with_items:
+     - "FalconSensorx86.msi"
+     - "FalconSensorx64.msi"  
+
+  - name: Install 32-bit file 
+    win_msi: path=C:\temp\FalconSensorx86.msi wait=true
+    when: ansible_architecture == '32-bit'
+
+  - name: Install 64-bit file
+    win_msi: path=C:\temp\FalconSensorx64.msi wait=true
+    when: ansible_architecture == '64-bit'

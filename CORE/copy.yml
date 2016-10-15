@@ -1,0 +1,8 @@
+---
+- hosts: prod
+  user: root
+  sudo: yes
+  connection: ssh
+  tasks:
+  - name: Copy first file
+    copy: src=<source path> dest=<destination path> owner=root group=root mode=755

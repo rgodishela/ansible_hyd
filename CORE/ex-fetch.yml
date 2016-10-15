@@ -1,0 +1,9 @@
+Pull some files from Remote Machine
+---
+- hosts: nova
+  tasks:
+    - name: Get the Grub files
+      fetch: src=/etc/default/grub dest=/tmp/
+
+    - name: Get the Hypervisor file
+      fetch: src=/opt/stack/service/nova-compute-20160901T093058Z/etc/nova/hypervisor.conf dest=/tmp/
