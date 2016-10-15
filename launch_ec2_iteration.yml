@@ -1,0 +1,18 @@
+---  
+- hosts: localhost  
+  connection: local  
+  gather_facts: no    
+  vars:  
+    #your region  
+    region: us-east-1    
+  tasks:  
+    - name: EC2 basic provisioning  
+      ec2:
+        region: "{{ region }}"  
+        key_name: aws-joey  
+        instance_type: t2.micro  
+        image: ami-2051294a      
+        group: joey_SG_useast1
+        instance_tags:  
+          Name: "web{{ item }}"  
+      with_sequence: count=5

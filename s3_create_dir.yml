@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: no
+  connection: local 
+  vars:
+    bucketname: rgodishela
+  tasks:
+    - name: create virtual directory
+      s3:
+        bucket: "{{ bucketname }}"
+        object: /dir1/dir2/
+        mode: create

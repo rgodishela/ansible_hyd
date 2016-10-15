@@ -1,0 +1,25 @@
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
+
+  tasks:
+
+  - name: Provision a set of instances
+    ec2:
+      key_name: aws-joey
+      group_id: sg-28ec6d52
+      instance_type: t2.micro
+      image: "{{ ami_id }}"
+      region: us-east-1
+      wait: true
+      exact_count: 1
+      count_tag:
+        Name: Demo
+      instance_tags:
+        Name: Demo
+    register: EC2
+
+  - name: Display whats in EC2
+    debug:
+      msg: var={{EC2}}

@@ -1,0 +1,10 @@
+- hosts: localhost
+  gather_facts: true
+  connection: local
+
+  tasks:
+  - name: Describe ec2 instances
+    
+  - name: Add all instance public IPs to host group
+    add_host: hostname={{ item.public_ip }} groups=ec2hosts
+    with_items: EC2.instances

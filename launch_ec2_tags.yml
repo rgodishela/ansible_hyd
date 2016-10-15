@@ -1,0 +1,46 @@
+---  
+- hosts: localhost  
+  connection: local  
+  gather_facts: no    
+  vars:  
+    region: us-east-1  
+    instance_type: t2.micro     
+    image: ami-2051294a    
+    key: aws-joey  
+  tasks:  
+    - name: launch ec2 with tags webserver staging 
+      ec2:
+        region: "{{ region }}"  
+        key_name: "{{ key }}"  
+        instance_type: "{{ instance_type }}"    
+        image: "{{ image }}"     
+        wait: yes    
+        group: joey_SG_useast1  
+        instance_tags:  
+          Name: staging-webserver 
+          class: webserver  
+          environment: staging  
+    - name: launch ec2 with tags webserver production 
+      ec2:
+        region: "{{ region }}"  
+        key_name: "{{ key }}"  
+        instance_type: "{{ instance_type }}"    
+        image: "{{ image }}"     
+        wait: yes    
+        group: joey_SG_useast1  
+        instance_tags:  
+          Name: production-webserver  
+          class: webserver  
+          environment: production
+    - name: launch ec2 with tags database staging 
+      ec2:
+        region: "{{ region }}"  
+        key_name: "{{ key }}"  
+        instance_type: "{{ instance_type }}"    
+        image: "{{ image }}"    
+        wait: yes    
+        group: joey_SG_useast1  
+        instance_tags:  
+          Name: staging-database  
+          class: database  
+          environment: staging  

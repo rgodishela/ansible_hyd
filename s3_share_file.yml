@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  gather_facts: no
+  connection: local 
+  vars:
+    bucketname: joey_deepdive
+  tasks:
+    - name: share file
+      s3:
+        bucket: "{{ bucketname }}"
+        object: ecs.config
+        expiration: 3600
+        mode: geturl

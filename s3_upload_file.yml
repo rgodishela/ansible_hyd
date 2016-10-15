@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: no
+  connection: local 
+  vars:
+    bucketname: joey_deepdive
+  tasks:
+    - name: upload file
+      s3:
+        bucket: "{{ bucketname }}"
+        object: ecs.config2
+        src: ecs.config1
+        overwrite: no
+        mode: put

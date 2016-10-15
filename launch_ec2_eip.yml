@@ -1,0 +1,21 @@
+---  
+- hosts: localhost  
+  connection: local  
+  gather_facts: no    
+  vars:  
+    region: us-east-1    
+  tasks:  
+    - name: launch instance
+      ec2:
+        region: "{{ region }}"  
+        key_name: aws-joey  
+        instance_type: t2.micro  
+        image: ami-2051294a  
+        wait: yes    
+        group: joey_SG_useast1
+      register: ec2  
+    - name: associate new EIP for the instance    
+      ec2_eip:
+        region: "{{ region }}"
+        instance_id: "{{ item.id }}"
+      with_items: ec2.instances

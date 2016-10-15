@@ -1,0 +1,10 @@
+ - name: start the instance
+         ec2:
+           image: ami-8caa1ce4
+           instance_type: m3.medium
+           key_name: mykey
+           group: [web, ssh, outbound]
+           instance_tags: { type: web, env: production }
+           wait: yes
+         register: ec2
+
