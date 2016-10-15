@@ -16,6 +16,6 @@
         group: joey_SG_useast1
         instance_tags:  
           group: webserver  
-        exact_count: 3  
+        exact_count: 0
         count_tag:  
           group: webserver
