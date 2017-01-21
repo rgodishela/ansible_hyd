@@ -1,0 +1,6 @@
+- hosts: wnodes
+  tasks:
+  - name: Install Google Chrome
+    win_choclatey: 
+     name: googlechrome
+     version: 55.0.2883.87

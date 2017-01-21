@@ -1,0 +1,43 @@
+win_acl - Set file/directory permissions for a system user or group.
+win_acl_inheritance - Change ACL inheritance
+win_chocolatey - Installs packages using chocolatey
+win_command - Executes a command on a remote Windows node
+win_copy - Copies files to remote locations on windows hosts.
+win_dotnet_ngen - Runs ngen to recompile DLLs after .NET updates
+win_environment - Modifies environment variables on windows hosts.
+win_feature - Installs and uninstalls Windows Features on Windows Server
+win_file - Creates, touches or removes files or directories.
+win_file_version - Get DLL or EXE file build version
+win_firewall_rule - Windows firewall automation
+win_get_url - Fetches a file from a given URL
+win_group - Add and remove local groups
+win_iis_virtualdirectory - Configures a virtual directory in IIS.
+win_iis_webapplication - Configures a IIS Web application.
+win_iis_webapppool - Configures a IIS Web Application Pool.
+win_iis_webbinding - Configures a IIS Web site.
+win_iis_website - Configures a IIS Web site.
+win_lineinfile - Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression.
+win_msi - Installs and uninstalls Windows MSI files
+win_nssm - NSSM - the Non-Sucking Service Manager
+win_owner - Set owner
+win_package - Installs/Uninstalls an installable package, either from local file system or url
+win_path - Manage Windows path environment variables
+win_ping - A windows version of the classic ping module.
+win_reboot - Reboot a windows machine
+win_regedit - Add, Edit, or Remove Registry Keys and Values
+win_regmerge - Merges the contents of a registry file into the windows registry
+win_robocopy - Synchronizes the contents of two directories using Robocopy.
+win_say - Text to speech module for Windows to speak messages and optionally play sounds
+win_scheduled_task - Manage scheduled tasks
+win_service - Manages Windows services
+win_share - Manage Windows shares
+win_shell - Execute shell commands on target hosts.
+win_shortcut - Manage shortcuts on Windows
+win_stat - returns information about a Windows file
+win_template - Templates a file out to a remote server.
+win_timezone - Sets Windows machine timezone
+win_unzip - Unzips compressed files and archives on the Windows node
+win_updates - Download and install Windows updates
+win_uri - Interacts with webservices.
+win_user - Manages local Windows user accounts
+win_webpicmd - Installs packages using Web Platform Installer command-line

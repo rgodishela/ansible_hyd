@@ -1,0 +1,7 @@
+- hosts: wnodes
+  tasks:
+  - name: Fetch a file from remote machine
+    fetch:
+      src: /tmp/uniquefile
+      dest: /tmp/special/
+      fail_on_missing: yes
