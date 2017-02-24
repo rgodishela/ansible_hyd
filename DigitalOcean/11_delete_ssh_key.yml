@@ -1,10 +1,12 @@
 # Ensure a SSH key is present
 # If a key matches this name, will return the ssh key id and changed = False
 # If no existing key matches this name, a new key is created, the ssh key id is returned and changed = False
-
-- digital_ocean:
-    state: present
-    command: ssh
-    name: my_ssh_key
-    ssh_pub_key: 'ssh-rsa AAAA...'
-    api_token: XXX
+- hosts: local
+  gather_facts: false
+  tasks:
+  - name: Remove SSH Key
+    digital_ocean:
+      state: absent
+      command: ssh
+      name: mac_do
+      api_token: "{{apitoken}}"

@@ -1,17 +1,16 @@
-- digital_ocean:
-    state: present
-    command: droplet
-    name: mydroplet
-    api_token: XXX
-    size_id: 2gb
-    region_id: ams2
-    image_id: fedora-19-x64
-    wait_timeout: 500
-  register: my_droplet
-
-- debug:
-    msg: "ID is {{ my_droplet.droplet.id }}"
-
-- debug:
-    msg: "IP is {{ my_droplet.droplet.ip_address }}"
+# Create a new Droplet
+# Will return the droplet details including the droplet id (used for idempotence)
+# sts
+- hosts: local
+  gather_facts: false
+  tasks:
+  - name: Delete a droplet
+    digital_ocean:
+      state: deleted
+      command: droplet
+      name: mynode01
+      api_token: "{{apitoken}}"
+      size_id: 2gb
+      region_id: nyc3
+      image_id: 22995941
 

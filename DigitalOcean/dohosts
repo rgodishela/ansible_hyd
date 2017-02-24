@@ -1,2 +1,2 @@
 [local]
-localhost ansible_connection=local ansible_user=rgodishela
+localhost ansible_connection=local ansible_user=rgodishela apitoken=af98c3c2f3faded2365da402f9babf7d4a90624f6e2cc21cd1616ca51751d1ef
