@@ -1,0 +1,13 @@
+# Ensure a SSH key is present
+# If a key matches this name, will return the ssh key id and changed = False
+# If no existing key matches this name, a new key is created, the ssh key id is returned and changed = False
+- hosts: local
+  gather_facts: no
+  tasks:
+  - name: add ssh key
+    digital_ocean:
+      state: present
+      command: ssh
+      name: my_ssh_key
+      api_token: b50969d863f123a686b9915443f09ec1c67ccafb798ac280596c16d7e4be1bf3
+      ssh_pub_key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/VxODTinuCQEC9lTdmzgBu+nS2d1dcXj+AiafMCt/BVpQmyKlqYqpazXsbfp32fDwPtyvd/J8FXMWq18i2rXcOxHvkB+RsoBzLko00bY9OmAMDHYTjFVt3g5DKMyuTC61tSBUGwQvQlM0k2MP1InkIGaCEP55NI8MUSBEIJ8zRw0rwib/yVNlkaB91hzUP41RhsocrE+61RI+/STqAJ/7j1Rq9Or8597XGZ1RXePzlfthjZcoKgAMHgn3kQvnpj/ZpUvZCIJD/wgydnY7aqkiw8b+pzsSiXj8TX2JTgccuyf+HpBVeG9XkfuBza1NTyHE/2uHQT8PffzQJiG+/FnF OpenShift-Key'

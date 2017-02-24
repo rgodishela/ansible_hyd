@@ -1,0 +1,13 @@
+# Create a droplet with ssh key
+# The ssh key id can be passed as argument at the creation of a droplet (see ssh_key_ids).
+# Several keys can be added to ssh_key_ids as id1,id2,id3
+# The keys are used to connect as root to the droplet.
+
+- digital_ocean:
+    state: present
+    ssh_key_ids: 123,456
+    name: mydroplet
+    api_token: XXX
+    size_id: 2gb
+    region_id: ams2
+    image_id: fedora-19-x64

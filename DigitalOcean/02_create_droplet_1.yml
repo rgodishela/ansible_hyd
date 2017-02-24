@@ -1,0 +1,14 @@
+# Ensure a droplet is present
+# If droplet id already exist, will return the droplet details and changed = False
+# If no droplet matches the id, a new droplet will be created and the droplet details (including the new id) are returned, changed = True.
+
+- digital_ocean:
+    state: present
+    command: droplet
+    id: 123
+    name: mydroplet
+    api_token: XXX
+    size_id: 2gb
+    region_id: ams2
+    image_id: fedora-19-x64
+    wait_timeout: 500
