@@ -1,0 +1,15 @@
+- host: elk
+  tasks:
+  - name: "Enable epel 7 repo"
+    yum:
+      name: "rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+      state: present
+  - name: "Check whether python >= 2.6"
+    yum:
+      - name: '*'
+        state: latest
+  - name: "Install docker"
+    yum:
+  - name: "Install pip"
+    yum:
+  - name: "install docker-py"

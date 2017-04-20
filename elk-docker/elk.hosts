@@ -1,0 +1,2 @@
+[elk]
+elkhost1 ansible_host=162.243.12.77

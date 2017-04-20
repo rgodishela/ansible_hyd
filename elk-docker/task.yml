@@ -1,0 +1,1 @@
+docker run -d ubuntu bash -c 'for i in {0..60}; do echo "Logging Message $i"; sleep 1; done'

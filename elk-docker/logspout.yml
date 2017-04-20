@@ -1,0 +1,8 @@
+ip=$(cat /etc/hosts | grep docker | awk '{ print $1 }')
+docker run -d \
+  -v /var/run/docker.sock:/tmp/docker.sock \
+  --name logspout \
+  -e LOGSPOUT=ignore \
+  -e DEBUG=true \
+  --publish=$ip:8000:80 \
+  gliderlabs/logspout:master syslog://$ip:5000

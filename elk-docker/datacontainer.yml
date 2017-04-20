@@ -1,0 +1,1 @@
+docker create -v /config --name logstash_config busybox; docker cp logstash.conf logstash_config:/config/
