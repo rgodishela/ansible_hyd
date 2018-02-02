@@ -1,0 +1,18 @@
+1. extra vars
+2. task vars (only for the task)
+3. block vars (only for tasks in block)
+4. role and include vars
+5. play vars_files
+6. play vars_prompt
+7. play vars
+8. set_facts
+9. registered vars
+10. host facts
+11. playbook host_vars
+12 playbook group_vars
+13. inventory host_vars
+14. inventory group_vars
+15. inventory vars
+16. role defaults
+
+

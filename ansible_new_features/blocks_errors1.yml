@@ -1,0 +1,12 @@
+- hosts: web
+  tasks:
+  - block: 
+      - debug: msg="Hello World"
+      - command: /bin/false
+    rescue:
+      - debug: msg="I caught an error"
+      - command: /bin/false
+        when: ansible_os_family == "Debian"
+      - debug: msg="I handled an error"
+    always: 
+      - debug: msg="This always executes" 

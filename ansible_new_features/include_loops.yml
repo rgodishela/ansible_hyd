@@ -1,0 +1,8 @@
+# this would fail before v2
+- include: users.yml
+    vars: 
+      user: "{{ item }}"
+  with_items:
+    - atmecs
+    - ramesh
+    - meetup

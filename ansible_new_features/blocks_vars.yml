@@ -1,0 +1,10 @@
+- hosts: localhost
+  vars: 
+    example1: foo
+  tasks:
+    - block:
+        - debug: var=example1
+        - debug: var=example2
+      vars: 
+        example2: bar
+    - debug: var=example2

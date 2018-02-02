@@ -1,0 +1,12 @@
+- hosts: web
+  strategy: free
+  tasks: 
+  - debug: 
+      msg: "{{ inventory_hostname }}" is starting.
+  - name: "sleep?"
+    command: sleep 10
+    when: ansible_os_family == "Debian"
+  - debug: 
+      msg: "{{inventory_hostname}}" is complete."
+
+

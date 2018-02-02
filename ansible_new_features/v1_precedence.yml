@@ -1,0 +1,5 @@
+1. extra vars
+2. vars, vars_files aka "everything else in the playbook"
+3. inventory vars -- host_vars then group_vars
+4. facts
+5. role_defaults

@@ -1,0 +1,18 @@
+---
+- block:
+  - name: install apache (Red Hat)
+    yum:
+      name: httpd
+      state: present
+  - name: create site directories
+    file:
+      path: "{{ item }}"
+      state: directory
+    with_items: apache_dirs
+  - name: copy httpd.conf
+    template:
+       src: httpd.conf.j2
+       dest: "{{ apache_config }}"
+    notify: restart apache
+when: ansible_os_family == "RedHat"
+tags: package  

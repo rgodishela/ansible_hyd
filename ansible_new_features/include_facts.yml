@@ -1,0 +1,12 @@
+# Before v2
+
+- include: RedHat.yml
+  when: ansible_os_family == "RedHat"
+
+- include: Debian.yml
+  when: ansible_os_family == "Debian"
+
+
+# With V2
+
+- include: "{{ ansible_os_family }}".yml

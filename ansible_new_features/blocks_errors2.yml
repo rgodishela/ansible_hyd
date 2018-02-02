@@ -1,0 +1,10 @@
+--- 
+- hosts: web
+  tasks:
+  - block: 
+    - deploy task 1 ..
+    - deploy task 2 ..
+    rescue:
+    - undo task ...
+    - undo task ...
+    any_errors_fatal: true
