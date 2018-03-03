@@ -4,7 +4,11 @@
 ## OS: CentOS:7
 
 ```sh
-sudo yum install epel-release || sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install epel-release 
+
+(or)
+
+sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo yum update
 sudo yum install ansible
 sudo ansible --version
