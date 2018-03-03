@@ -1,7 +1,7 @@
  # Ansible Installation
 ************************
 
-## OS: CentOS:7
+## CentOS:7
 
 ```sh
 sudo yum install epel-release 
@@ -13,7 +13,7 @@ sudo yum update
 sudo yum install ansible
 sudo ansible --version
 ```
-## OS: Ubuntu 17 LTS
+## Ubuntu 17 LTS
 
 ```sh
 sudo apt-get install software-properties-common
