@@ -1,0 +1,5 @@
+[local]
+localhost ansible_connection=local
+
+[dockerhosts]
+docker1 ansible_host=159.65.93.211

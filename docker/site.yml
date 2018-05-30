@@ -1,0 +1,3 @@
+- hosts: docker1
+  roles:
+    - { role: docker-centos, what: install }

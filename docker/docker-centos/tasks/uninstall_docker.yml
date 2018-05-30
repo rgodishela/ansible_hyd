@@ -1,0 +1,9 @@
+- name: Uninstall docker-ce
+  package:
+    name: docker-ce
+    state: absent
+
+- name: Remove docker directory which holds Images, containers, volumes, or customized configuration files
+  file: 
+    path: /var/lib/docker
+    state: absent
